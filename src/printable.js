@@ -67,8 +67,14 @@ class PrintableCoils extends Printable {
 	}
 
 	printPretty() {
-		const addresses = new Array(this.cnt).fill(0).map((el, idx) => this.addr + idx).map(el => paddString(el, 5, '0'))
-		const values = this.coils.map(el => el ? '1' : '0').map(el => paddString(el, 5, ' '))
+		const addresses = new Array(this.cnt)
+			.fill(0)
+			.map((el, idx) => this.addr + idx)
+			.map(el => paddString(el, 5, '0'))
+
+		const values = this.coils
+			.map(el => el ? '1' : '0')
+			.map(el => paddString(el, 5, ' '))
 
 		for (let q = 0; q < this.cnt; ++q) {
 			const addr = paddString(addresses[q], 5, ' ')
