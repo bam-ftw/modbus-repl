@@ -78,40 +78,6 @@ class PrintableCoils extends Printable {
 	}
 }
 
-// function printCoils(coils, addr, cnt) {
-// 	const addresses = new Array(cnt).fill(0).map((el, idx) => addr + idx).map(el => paddString(el, 5, '0'))
-// 	const values = coils.map(el => el ? '1' : '0').map(el => paddString(el, 5, ' '))
-
-// 	for (let q = 0; q < cnt; ++q) {
-// 		const addr = paddString(addresses[q], 5, ' ')
-// 		const val = paddString(values[q], 5, ' ')
-// 		log(`  ${addr} : ${val}`)
-// 	}
-
-// 	if (headless) {
-// 		console.log(coils.slice(0, cnt))
-// 	}
-// }
-
-// function printRegs(regs, addr, cnt) {
-// 	const addresses = new Array(cnt).fill(0).map((el, idx) => addr + idx).map(el => paddString(el, 5, '0'))
-// 	const values = regs.map(regToStr10)
-// 	const hexes = regs.map(regToStr16).map(regToHex)
-// 	const chars = regs.map(regToChars)
-
-// 	for (let q = 0; q < cnt; ++q) {
-// 		const addr = paddString(addresses[q], 5, ' ')
-// 		const val = paddString(values[q], 5, ' ')
-// 		const hex = hexes[q]
-// 		const char = chars[q]
-// 		log(`  ${addr} : ${val} | ${hex} | ${char}`)
-// 	}
-
-// 	if (headless) {
-// 		console.log(regs)
-// 	}
-// }
-
 module.exports = {
 	Printable,
 	PrintableCoils,
