@@ -1,4 +1,4 @@
-const modbus = require('jsmodbus')
+const TcpModbus = require('./tcp-modbus')
 const UdpModbus = require('./udp-modbus')
 
 /**
@@ -32,10 +32,5 @@ module.exports = function initClient(protocol, host, port) {
 		return new UdpModbus(host, port)
 	}
 
-	return new modbus.client.tcp.complete({
-		host,
-		port,
-		autoReconnect: false,
-		timeout: 2500
-	})
+	return new TcpModbus(host, port)
 }

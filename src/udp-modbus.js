@@ -1,4 +1,4 @@
-const EventEmitter = require('events')
+const EventEmitter = require('events').EventEmitter
 const dgram = require('dgram')
 
 const READ_COILS = 1
