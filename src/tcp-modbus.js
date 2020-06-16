@@ -31,7 +31,7 @@ class TcpModbus extends EventEmitter {
 
 	connect() {
 		this.socket.connect({
-			hose: this.host,
+			host: this.host,
 			port: Number(this.port),
 		})
 	}
