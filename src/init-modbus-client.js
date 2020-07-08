@@ -32,5 +32,6 @@ module.exports = function initClient(protocol, host, port) {
 		return new UdpModbus(host, port)
 	}
 
+	// @ts-ignore
 	return new TcpModbus(host, port)
 }
