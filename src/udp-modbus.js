@@ -217,6 +217,16 @@ class UdpModbus extends EventEmitter {
 			byteCount: velueBytes.length,
 			payload: velueBytes,
 			coils: result,
+
+			response: {
+				_body: {
+					_fc: subResp[0],
+					_coils: velueBytes,
+					_numberOfBytes: velueBytes.length,
+					_valuesAsBuffer: velueBytes,
+					_valuesAsArray: result,
+				}
+			}
 		}
 	}
 
@@ -238,9 +248,19 @@ class UdpModbus extends EventEmitter {
 			byteCount: velueBytes.length,
 			payload: velueBytes,
 			register: result,
+
+			response: {
+				_body: {
+					_fc: subResp[0],
+					_byteCount: velueBytes.length,
+					_values: velueBytes,
+					_bufferLength: velueBytes.length,
+					_valuesAsArray: result,
+					_valuesAsBuffer: velueBytes,
+				}
+			}
 		}
 	}
-
 }
 
 module.exports = UdpModbus
